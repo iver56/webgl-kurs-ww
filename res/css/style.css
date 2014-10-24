@@ -4,8 +4,14 @@
     font-weight:400;
 }
 
+@font-face {
+    font-family: nexa;
+    src: url('../fonts/nexa.woff');
+    font-weight: 400;
+}
+
 body {
-    font-family: norwester, georgia, serif;
+    font-family: lato, helvetica, arial, sans-serif;
     font-size: 40px;
 }
 
@@ -65,4 +71,14 @@ a {
 .tiny-font code {
     font-size: 2px !important;
     color: black !important;
+}
+
+h1 {
+    font-family: nexa, georgia;
+    font-weight: 400;
+    font-size: 1.6em;
+}
+
+.remark-slide-number {
+    font-size: 0.6em;
 }
