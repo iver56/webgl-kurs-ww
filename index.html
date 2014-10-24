@@ -112,32 +112,13 @@ funksjoner ser sånn ut
 
 ---
 
-<br>
-<br>
-<br>
-```javascript
-function add(number1, number2){
-    return number1 + number2;
-}
-
-var someOtherVariable = add;
-
-someOtherVariable(3, 4); /* returns 7 */
-```
-
-???
-
-man kan kaste funksjoner rundt i variable
-
----
-
 # WebGL
 
 Javascript-API for 3D
 
 OpenGL i nettleseren
 
-Fungerer i de fleste moderne nettlesere (desktop)
+Fungerer i de alle moderne nettlesere (mobil & desktop)
 
 ???
 WebGL er et JavaScript-API for 3D-grafikk i nettleseren.
@@ -148,7 +129,7 @@ Grafikken tegnes på et canvas-element (HTML5)
 
 Støttes av Firefox, Chrome, Safari, Opera, IE11
 
-Foreløpig dårlig støtte på mobil
+Støttes også i iOS 8 og i nye Android-versjoner
 
 ---
 
@@ -396,6 +377,8 @@ class: tiny-font
 ```
 
 
+???
+Eksempel på WebGL uten THREE.js
 ---
 class: middle
 
@@ -487,13 +470,49 @@ function animate() {
 
     renderer.render(scene, camera);
 }
+
+animate();
 ```
 
 ???
 
 Nettleseren bestemmer hvor ofte funksjonen kalles
 
-Når nettsiden er i bakgrunnen, kalles den sjeldnere
+Med requestanimationframe, kalles funksjonen like ofte som skjermen oppdateres.
+
+Når nettsiden er i bakgrunnen, kalles den sjeldnere.
+
+Vi kaller animate én gang for å starte den, resten går automatisk.
+
+---
+class: center, middle
+
+# Tid
+
+## Date.now()
+
+Millisekunder siden 1. januar 1970
+
+---
+```javascript
+function animate() {
+    requestAnimationFrame(animate);
+
+    var t = Date.now() / 1000;
+
+    // do animation here
+
+    renderer.render(scene, camera);
+}
+
+animate();
+```
+
+???
+
+Nå har vi en variabel som øker for hver frame i animasjonen.
+
+Uansett hvor ofte skjermen oppdateres øker den med én hvert sekund.
 
 ---
 
@@ -512,13 +531,13 @@ De fyller ut der det står kommentarer i koden på linken
 # Oppgave 1
 
 ```javascript
-mesh = new THREE.Mesh(geometry, material);
+cube = new THREE.Mesh(geometry, material);
 ```
 
-mesh.rotation har tre properties: x, y og z
+cube.rotation har tre properties: x, y og z
 
 ```javascript
-mesh.rotation.x = 1;
+cube.rotation.x = 1;
 ```
 
 ---
@@ -538,29 +557,10 @@ Noe à la dette
 function animate() {
     requestAnimationFrame(animate);
 
-    mesh.rotation.x += 0.005;
-    mesh.rotation.y += 0.005;
+    var t = Date.now() / 1000;
 
-    renderer.render(scene, camera);
-}
-```
-
----
-class: center, middle
-
-# Date.now()
-
-Millisekunder siden 1. januar 1970
-
----
-class: middle
-
-```javascript
-function animate() {
-    requestAnimationFrame(animate);
-
-    mesh.rotation.x = Date.now() * 0.0005;
-    mesh.rotation.z = Date.now() * 0.0005;
+    mesh.rotation.x = t * 5;
+    mesh.rotation.z = t * 5;
 
     renderer.render(scene, camera);
 }
@@ -590,8 +590,8 @@ Sett camera.position.x og .y (Skaler etter behov)
 Flytt kamera
 
 ```javascript
-camera.position.x = CUBE_HEIGHT * Math.sin(t / 1000);
-camera.position.y = CUBE_HEIGHT * Math.cos(t / 1000);
+camera.position.x = CUBE_HEIGHT * Math.sin(t);
+camera.position.y = CUBE_HEIGHT * Math.cos(t);
 ```
 
 ---
@@ -613,7 +613,7 @@ cube.scale.y = ...
 ```
 
 ```javascript
-Math.sin(0.001 * t)
+Math.sin(t)
 // Vil sakte men sikkert animere mellom -1 og 1
 ```
 
@@ -627,7 +627,7 @@ Math.sin(0.001 * t)
 for (var i = 0; i < cubes.length; i++) {
 	var cube = cubes[i];
 	//manipulate every cube here
-	cube.position.x = 200 * Math.sin(0.001 * t + 0.5 * i);
+	cube.position.x = 200 * Math.sin(t + 0.5 * i);
 }
 ```
 Hvis du bruker i-variabelen, kan du animere hver kube forskjellig
@@ -670,11 +670,7 @@ Spør oss om hjelp
 
 ---
 
-# Merket dere dette?
-
-Vi har ikke brukt æ, ø eller å
-
-Se hvor rævva støtte fonten vår har
+# Demo compo
 
 Nå, la oss kode! Hilsen Poëtene
 
