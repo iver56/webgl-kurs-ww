@@ -47,9 +47,7 @@ De må gjerne finne på og tweake selv.
 
 Poëtene er en interessegruppe i Abakus
 
-Vi liker teknologi (gammel og ny)
-
-Fra WebGL til Mikrokontrollere, vi liker det meste
+Liker teknologi, og har lyst til å gjøre "kule ting"
 
 ---
 class: center
@@ -108,6 +106,21 @@ add(10, 20); /* returns 30 */
 
 funksjoner ser sånn ut
 
+---
+
+<br>
+<br>
+<br>
+```javascript
+var = {};
+a.b = function() {
+    return "b";
+}
+a.b();
+```
+???
+
+Objektorientering!
 ---
 
 # WebGL
@@ -594,49 +607,23 @@ camera.position.y = CUBE_HEIGHT * Math.cos(t);
 
 ---
 
-# Oppgave 3
+# Oppgave 2
 
-## Animer mange kuber
-
-Animer mange kuber i en kul bane. Du kan f.eks bevege de i en sirkelbane eller ∞
-
----
-
-# Oppgave 3
-
-Du kan enkelt sette position og scale:
-```javascript
-cube.position.x = ...
-cube.scale.y = ...
-```
-
-```javascript
-Math.sin(t)
-// Vil sakte men sikkert animere mellom -1 og 1
-```
-
----
-
-# Oppgave 3
-
-## Animer mange kuber
+## Kan også animere mange samtidig
 
 ```javascript
 for (var i = 0; i < cubes.length; i++) {
-	var cube = cubes[i];
-	//manipulate every cube here
-	cube.position.x = 200 * Math.sin(t + 0.5 * i);
+    var cube = cubes[i];
+    //manipulate every cube here
+    cube.position.x = 200 * Math.sin(t + 0.5 * i);
 }
 ```
-Hvis du bruker i-variabelen, kan du animere hver kube forskjellig
-
 ---
 
 # Oppgave 3
 
-## Animer mange kuber
+## Lag en skybox
 
-### http://poetene.net/effect/12
 
 ---
 class: center middle
@@ -649,7 +636,12 @@ class: center middle
 ---
 class: center middle
 
-# Oppgave 4
+# Oppgave 4 Musikk
+
+---
+class: center middle
+
+# Oppgave 4 Shaderz
 
 ---
 class: center middle
@@ -669,6 +661,8 @@ Spør oss om hjelp
 ---
 
 # Demo compo
+
+Lag noe kult, og vinn premie!
 
 Nå, la oss kode! Hilsen Poëtene
 
