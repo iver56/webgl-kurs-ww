@@ -506,10 +506,12 @@ Millisekunder siden 1. januar 1970
 
 ---
 ```javascript
+var initial_t = Date.now() / 1000;
+
 function animate() {
     requestAnimationFrame(animate);
 
-    var t = Date.now() / 1000;
+    var t = Date.now() / 1000 - initial_t;
 
     // do animation here
 
@@ -524,6 +526,8 @@ animate();
 Nå har vi en variabel som øker for hver frame i animasjonen.
 
 Uansett hvor ofte skjermen oppdateres øker den med én hvert sekund.
+
+Initial_t gjør at den starter på 0.
 
 ---
 
@@ -568,7 +572,7 @@ Noe à la dette
 function animate() {
     requestAnimationFrame(animate);
 
-    var t = Date.now() / 1000;
+    var t = Date.now() / 1000 - initial_t;
 
     mesh.rotation.x = t * 5;
     mesh.rotation.z = t * 5;
@@ -628,21 +632,54 @@ for (var i = 0; i < cubes.length; i++) {
 ---
 class: center middle
 
-# Pause
-???
-
-15 minutter
-
----
-class: center middle
-
 # Oppgave 4 Musikk
 
 ---
 class: center middle
 
-# Oppgave 4 Shaderz
+# Oppgave 5
 
+## Shaders
+
+---
+# Hva er shaders?
+
+Kode som kjøres rett på GPU
+
+Skrevet i glsl
+
+???
+
+glsl er et språk som ligner litt på c
+
+Vi skal ikke lære glsl i dag, men bruke en del ferdig skrevne shaders vi har lagd fra før
+
+---
+
+# Bruke shaders
+
+http://poetene.net/shaders/
+
+```
+new THREE.ShaderPass(SHADERS.multiply);
+```
+???
+
+Laster inn en av de ferdige shaderne våre
+---
+# Uniforms
+
+Parametre som kan endre oppførselen til en shader
+
+```
+shaderPass.uniforms.amount.value = 1;
+```
+
+???
+
+Et objekt med ulike verdier som kan styres fra javascript.
+
+Shaderen bruker disse verdiene i beregningene sine
 ---
 class: center middle
 
