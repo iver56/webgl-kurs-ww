@@ -60,6 +60,16 @@ a {
     width: 100%;
     height: 50%;
 }
+.small-demo {
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.demo canvas,
+.small-demo canvas {
+    border: none;
+}
 
 .float-left {
     float: left;
