@@ -44,7 +44,7 @@ De må gjerne finne på og tweake selv.
 
 Poëtene er en interessegruppe i Abakus
 
-Liker teknologi, og har lyst til å gjøre "kule ting"
+Vi bruker teknologi til å lage kule grafiske ting, demoer, musikk, and such ☃.
 
 ---
 class: center
@@ -113,7 +113,7 @@ Javascript-API for 3D
 
 OpenGL i nettleseren
 
-Fungerer i de alle moderne nettlesere (mobil & desktop)
+Fungerer i moderne nettlesere (mobil & desktop)
 
 ???
 WebGL er et JavaScript-API for 3D-grafikk i nettleseren.
@@ -147,7 +147,7 @@ WebGL er en utvidelse av dette, og har dermed Z-aksen som dybde.
 
 ---
 
-# Hvorfor THREE.js
+# THREE.js
 
 ### 3D blir enklere
 
@@ -405,7 +405,7 @@ renderer.render(scene, camera);
 Minimalt eksempel.
 Dette er den minste versjonen av boilerplaten du trenger.
 
-Forklar hver linje godt - denne sliden introduserer mange konsepter.
+Forklar de viktigste konseptene godt, alle talla er ikke så interessante.
 
 ---
 demo: show-sphere
@@ -478,11 +478,7 @@ animate();
 
 ???
 
-Nettleseren bestemmer hvor ofte funksjonen kalles
-
-Med requestanimationframe, kalles funksjonen like ofte som skjermen oppdateres.
-
-Når nettsiden er i bakgrunnen, kalles den sjeldnere.
+Nettleseren bestemmer hvor ofte funksjonen kalles.
 
 Vi kaller animate én gang for å starte den, resten går automatisk.
 
@@ -523,12 +519,13 @@ Uansett hvor ofte skjermen oppdateres øker den med én hvert sekund.
 Initial_t gjør at den starter på 0.
 
 ---
+demo: rotate-cube
 
 # Oppgave 1
 
 ## Lage en roterende kube
 
-### http://poetene.net/effect/4
+<div id=rotate-cube class=demo></div>
 
 ???
 
@@ -549,14 +546,13 @@ cube.rotation.x = 1;
 ```
 
 ---
-demo: rotate-cube
 
 # Oppgave 1
 
-<div id=rotate-cube class=demo></div>
+## Lage en roterende kube
 
-???
-Noe à la dette
+### http://poetene.net/effect/4
+
 ---
 
 # LF oppgave 1
@@ -580,8 +576,6 @@ function animate() {
 
 Animer kameraet i en sirkel rundt z-aksen
 
-http://www.poetene.net/effect/13-camera/
-
 ---
 
 # Oppgave 2
@@ -590,6 +584,14 @@ Sett camera.position.x og .y (Skaler etter behov)
 <div style=background:white;text-align:center;height:45%>
 <img style=height:70% src=res/img/unit_circle.svg>
 </div>
+
+---
+
+# Oppgave 2
+
+Animer kameraet i en sirkel rundt z-aksen
+
+http://www.poetene.net/effect/13-camera/
 
 ---
 
@@ -665,6 +667,14 @@ scene.add(skyBoxMesh);
 
 ---
 
+# Oppgave 4
+
+Prøv forskjellige skyboxes http://poetene.net/effect/51
+
+Skyboxes tilgjengelig på http://www.poetene.net/skyboxes/
+
+---
+
 # Oppgave 5
 
 ## Musikk ♫ ♪
@@ -681,6 +691,15 @@ function animate() {
 	console.log(music.currentTime); // antall sekunder
 }
 ```
+
+---
+
+# Oppgave 5
+
+## Legg opp og bruk deres egen musikk.
+
+http://www.poetene.net/effect/44-musikk-eksempel/
+
 ---
 # Oppgave 6
 
@@ -708,8 +727,13 @@ Vi skal ikke lære glsl i dag, men bruke en del ferdig skrevne shaders vi har la
 
 http://poetene.net/shaders/
 
-```
-new THREE.ShaderPass(SHADERS.multiply);
+```javascript
+var shaderPass = new THREE.ShaderPass(SHADERS.multiply);
+
+// Skriv kun dette for den siste shaderen
+shaderPass.renderToScreen = true;
+
+composer.addPass(shaderPass);
 ```
 ???
 
@@ -719,7 +743,9 @@ Laster inn en av de ferdige shaderne våre
 
 Parametre som kan endre oppførselen til en shader
 
-```
+Uniformen heter 'amount'; 'value' er verdien.
+
+```javascript
 shaderPass.uniforms.amount.value = 1;
 ```
 
@@ -728,6 +754,15 @@ shaderPass.uniforms.amount.value = 1;
 Et objekt med ulike verdier som kan styres fra javascript.
 
 Shaderen bruker disse verdiene i beregningene sine
+
+---
+
+# Shaders
+
+## Lek dere med shaders
+
+http://www.poetene.net/effect/54-oppgave-6-shaders/
+
 ---
 class: center middle
 
