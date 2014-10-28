@@ -458,7 +458,6 @@ var geometry = new THREE.SphereGeometry(
 ## Material
 
 ```javascript
-
 var material = new THREE.MeshBasicMaterial(
     {color: 0xff0000}
 );
@@ -487,7 +486,7 @@ scene.add(sphere);
 
 # Animasjon
 
-Animasjon krever at en funksjon kalles med jevne mellomrom
+For å sette ting i bevegelse, må bildet tegnes mange ganger i sekundet
 
 ```javascript
 function animate() {
@@ -642,13 +641,15 @@ for (var i = 0; i < cubes.length; i++) {
 
 # Oppgave 3
 
-## Lag en skybox
+## Skybox
+
+<img src=res/img/Skybox_example.png>
 
 
 ---
 # Oppgave 4
 
-## Musikk
+## Musikk ♫ ♪
 
 ```html
 <audio id="music" loop>
