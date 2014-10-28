@@ -13,6 +13,10 @@
 		margin-top: .3em;
 		margin-bottom: .3em;
 	  }
+	  
+	  .skybox-code-slide {
+		padding: 1em !important;
+	  }
     </style>
     <script src=remark-0.5.7.min.js></script>
     <script src=//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js></script>
@@ -116,21 +120,6 @@ add(10, 20); /* returns 30 */
 
 funksjoner ser sånn ut
 
----
-
-<br>
-<br>
-<br>
-```javascript
-var = {};
-a.b = function() {
-    return "b";
-}
-a.b();
-```
-???
-
-Objektorientering!
 ---
 
 # WebGL
@@ -664,6 +653,29 @@ for (var i = 0; i < cubes.length; i++) {
 ## Skybox
 
 <img src=res/img/Skybox_example.png>
+
+---
+class: skybox-code-slide
+
+```javascript
+var urlPrefix = "/static/res/skyboxes/TropicalSunnyDay_";
+var directions  = ["left", "right", "up", "down", "front", "back"];
+var imageSuffix = ".jpg";
+var skyGeometry = new THREE.BoxGeometry(15000, 15000, 15000);
+
+var materialArray = [];
+for (var i = 0; i < 6; i++) {
+	var url = urlPrefix + directions[i] + imageSuffix;
+	materialArray.push(new THREE.MeshBasicMaterial({
+		map: THREE.ImageUtils.loadTexture(url),
+		side: THREE.BackSide
+	}));
+}
+var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
+var skyBoxMesh = new THREE.Mesh(skyGeometry, skyMaterial);
+
+scene.add(skyBoxMesh);
+```
 
 ---
 
