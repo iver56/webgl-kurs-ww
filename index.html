@@ -647,12 +647,11 @@ class: skybox-code-slide middle
 ```javascript
 var urlPrefix = "/static/res/skyboxes/TropicalSunnyDay_";
 var directions  = ["left", "right", "up", "down", "front", "back"];
-var imageSuffix = ".jpg";
 var skyGeometry = new THREE.BoxGeometry(15000, 15000, 15000);
 
 var materialArray = [];
 for (var i = 0; i < 6; i++) {
-	var url = urlPrefix + directions[i] + imageSuffix;
+	var url = urlPrefix + directions[i] + ".jpg";
 	materialArray.push(new THREE.MeshBasicMaterial({
 		map: THREE.ImageUtils.loadTexture(url),
 		side: THREE.BackSide
