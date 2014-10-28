@@ -61,9 +61,11 @@ a {
     height: 50%;
 }
 .small-demo {
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     float: right;
+	margin-right: -10%;
+	margin-top: -5%;
 }
 
 .demo canvas,
