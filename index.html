@@ -90,7 +90,9 @@ objects
 
 ---
 
-<br><br><br>
+<br>
+<br>
+<br>
 ```javascript
 var someNumber = 0;
 
@@ -626,9 +628,18 @@ camera.position.y = CUBE_HEIGHT * Math.cos(t);
 
 ---
 
-# Oppgave 2
+# Oppgave 3
 
-## Kan også animere mange samtidig
+## Animer mange kuber i kule baner
+
+Du kan f.eks bevege de i en sirkelbane, ∞-bane, eller i ☃-bane.
+
+---
+
+# Oppgave 3
+
+Et sett med kuber er tilgjengelig i ```cubes```.
+Disse kan animeres med:
 
 ```javascript
 for (var i = 0; i < cubes.length; i++) {
@@ -637,17 +648,26 @@ for (var i = 0; i < cubes.length; i++) {
     cube.position.x = 200 * Math.sin(t + 0.5 * i);
 }
 ```
+
 ---
 
 # Oppgave 3
+
+## Animer mange kuber
+
+### http://poetene.net/effect/12
+
+---
+
+# Oppgave 4
 
 ## Skybox
 
 <img src=res/img/Skybox_example.png>
 
-
 ---
-# Oppgave 4
+
+# Oppgave 5
 
 ## Musikk ♫ ♪
 
@@ -666,7 +686,7 @@ function animate() {
 ---
 class: center middle
 
-# Oppgave 5
+# Oppgave 6
 
 ## Shaders
 
