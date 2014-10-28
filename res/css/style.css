@@ -89,8 +89,19 @@ h1 {
     font-family: nexa, georgia;
     font-weight: 400;
     font-size: 1.6em;
+    margin-top: .3em;
+    margin-bottom: .3em;
+}
+
+h2 {
+    margin-top: .3em;
+    margin-bottom: .3em;
 }
 
 .remark-slide-number {
     font-size: 0.6em;
+}
+
+.skybox-code-slide {
+    padding: 1em !important;
 }
