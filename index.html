@@ -574,8 +574,8 @@ function animate() {
 
     var t = Date.now() / 1000 - initial_t;
 
-    mesh.rotation.x = t * 5;
-    mesh.rotation.z = t * 5;
+    cube.rotation.x = t * 5;
+    cube.rotation.z = t * 5;
 
     renderer.render(scene, camera);
 }
