@@ -26,29 +26,17 @@ class: center, middle
 
 ---
 
-# Dette kurset
-Korte oppgaver som viser grunnleggende THREE.js-konsepter.
+# This course
+Short tasks that demonstrate basic THREE.js concepts.
 
-Til slutt kombinere det dere har sett til en egen kul effekt!
+Then: combine what you have learned to make your own cool effect!
 
-Ha mye moro :)
+Have some fun :)
 
 ???
 Hver del skal de gjøre litt selv.
 
 De må gjerne finne på og tweake selv.
-
----
-
-# Hvem er vi?
-
-Poëtene er en interessegruppe i Abakus
-
-Vi bruker teknologi til å lage kule grafiske ting, demoer og musikk.
-
-???
-
-Vi går fjerde og femteklasse datateknikk.
 
 ---
 
@@ -59,75 +47,17 @@ Vi går fjerde og femteklasse datateknikk.
 <img src="res/img/DSC_0304.JPG" style="width:100%">
 
 ---
-class: center
-
-# JavaScript
-
-<!-- deal with it -->
-<br>
-
-"Virker som Python,<br>ser ut som Java"
-
----
-
-<br>
-<br>
-<br>
-```javascript
-var someString = "this is a string";
-
-var someArray = ['foo', 'bar'];
-someArray[0]; /* foo */
-
-var someObject = {x: 5, y: 9};
-someObject.x; /* 5 */
-```
-
-???
-
-Slik ser det ut når man lager en variabel.
-arrays
-objects
-
----
-
-<br>
-<br>
-<br>
-```javascript
-var someNumber = 0;
-
-someNumber += 1; /* someNumber is now 1 */
-```
-
----
-
-<br>
-<br>
-<br>
-```javascript
-function add(number1, number2){
-    return number1 + number2;
-}
-
-add(10, 20); /* returns 30 */
-```
-
-???
-
-funksjoner ser sånn ut
-
----
 
 # WebGL
 
-Javascript-API for 3D
+Javascript API for GPU rendering
 
-OpenGL i nettleseren
+OpenGL in the browser
 
-Fungerer i moderne nettlesere (mobil & desktop)
+Works in modern browser (mobile and desktop)
 
 ???
+
 WebGL er et JavaScript-API for 3D-grafikk i nettleseren.
 
 Det er basert på OpenGL
@@ -140,16 +70,16 @@ Støttes også i iOS 8 og i nye Android-versjoner
 
 ---
 
-### Koordinatsystem i WebGL
+### Coordinate system in WebGL
 
-.float-left[x er bortover
+.float-left[x goes rightwards
 
-y er oppover
+y goes upwards
 
-z er utover
+z goes outwards (from the screen)
 ]
 .float-right[
-![Koordinatsystem i WebGL](res/img/3d_coordinate_system.png)
+![Coordinate system in WebGL](res/img/3d_coordinate_system.png)
 ]
 
 ???
@@ -161,14 +91,12 @@ WebGL er en utvidelse av dette, og har dermed Z-aksen som dybde.
 
 # THREE.js
 
-### 3D blir enklere
+### Makes 3D easier
 
-Bygd opp av:
-
-- Kamera
+- Camera
 - Scene
-- 3D-objekter (mesh)
-- Lys
+- 3D-objects (mesh)
+- Lighting
 
 ???
 
@@ -425,7 +353,7 @@ demo: show-sphere
 
 <div id=show-sphere class=small-demo></div>
 
-# Legg til objekt
+# Add an object
 
 ## Geometry
 
@@ -442,7 +370,7 @@ var geometry = new THREE.SphereGeometry(
 
 <div style="width:200px; height: 200px; background: red; float: right;"></div>
 
-# Legg til objekt
+# Add an object
 
 ## Material
 
@@ -457,7 +385,7 @@ demo: show-sphere-mesh
 
 <div id=show-sphere-mesh class=small-demo></div>
 
-# Legg til objekt
+# add an object
 
 ## Mesh
 
@@ -473,9 +401,9 @@ scene.add(sphere);
 
 ---
 
-# Animasjon
+# Animation
 
-For å sette ting i bevegelse, må bildet tegnes mange ganger i sekundet
+The canvas must be redrawn many times per second
 
 ```javascript
 function animate() {
@@ -498,7 +426,7 @@ Vi kaller animate én gang for å starte den, resten går automatisk.
 ---
 class: center, middle
 
-# Tid
+# Time
 
 ## Date.now()
 
@@ -534,7 +462,7 @@ Initial_t gjør at den starter på 0.
 ---
 class: center middle
 
-# Oppgaver
+# Tasks
 
 ???
 
@@ -547,9 +475,9 @@ Og så har vi konkurranse.
 ---
 demo: rotate-cube
 
-# Oppgave 1
+# Task 1
 
-## Lage en roterende kube
+## Make a rotating cube
 
 <div id=rotate-cube class=demo></div>
 
@@ -559,13 +487,13 @@ De fyller ut der det står kommentarer i koden på linken
 
 ---
 
-# Oppgave 1
+# Task 1
 
 ```javascript
 cube = new THREE.Mesh(geometry, material);
 ```
 
-cube.rotation har tre properties: x, y og z
+cube.rotation has three properties: x, y og z
 
 ```javascript
 cube.rotation.x = 1;
@@ -573,15 +501,15 @@ cube.rotation.x = 1;
 
 ---
 
-# Oppgave 1
+# Task 1
 
-## Lage en roterende kube
+## Make a rotating cube
 
 ### http://poetene.net/threejs/effect/4
 
 ---
 
-# LF oppgave 1
+# Solution Task 1
 
 ```javascript
 function animate() {
@@ -598,32 +526,32 @@ function animate() {
 
 ---
 
-# Oppgave 2
+# Task 2
 
-Animer kameraet i en sirkel rundt z-aksen
+Animate the camera in a circle around the z-axis
 
 ---
 
-# Oppgave 2
+# Task 2
 
-Sett camera.position.x og .y
+Set camera.position.x og .y
 <div style=background:white;text-align:center;height:45%>
 <img style=height:70% src=res/img/unit_circle.svg>
 </div>
 
 ---
 
-# Oppgave 2
+# Task 2
 
-Animer kameraet i en sirkel rundt z-aksen
+Animate the camera in a circle around the z-axis
 
 http://poetene.net/threejs/effect/13-camera/
 
 ---
 
-# LF Oppgave 2
+# Solution Task 2
 
-Flytt kamera
+Move the camera
 
 ```javascript
 camera.position.x = DISTANCE_FROM_Z_PLANE * Math.sin(t);
@@ -632,18 +560,18 @@ camera.position.y = DISTANCE_FROM_Z_PLANE * Math.cos(t);
 
 ---
 
-# Oppgave 3
+# Task 3
 
-## Animer mange kuber i kule baner
+## Animate multiple cubes in fun trajectories
 
-Du kan f.eks bevege de i en sirkelbane, ∞-bane, eller i ☃-bane.
+You could go for instance a circular movement, a ∞ trajectory, or in a ☃ trajectory.
 
 ---
 
-# Oppgave 3
+# Task 3
 
-Et sett med kuber er tilgjengelig i ```cubes```.
-Disse kan animeres med:
+An array of cubes is available in ```cubes```.
+Can e.g. by animated by:
 
 ```javascript
 for (var i = 0; i < cubes.length; i++) {
@@ -655,15 +583,15 @@ for (var i = 0; i < cubes.length; i++) {
 
 ---
 
-# Oppgave 3
+# Task 3
 
-## Animer mange kuber
+## Animate many cubes
 
 ### http://poetene.net/threejs/effect/12
 
 ---
 
-# Oppgave 4
+# Task 4
 
 ## Skybox
 
@@ -693,19 +621,19 @@ scene.add(skyBoxMesh);
 
 ---
 
-# Oppgave 4
+# Task 4
 
-Se eksempel på http://poetene.net/threejs/effect/51
+Example: http://poetene.net/threejs/effect/51
 
-Skyboxes tilgjengelig på http://poetene.net/threejs/skyboxes/
+Skyboxes available at http://poetene.net/threejs/skyboxes/
 
-Legg til skybox i din egen demo
+Add a skybox in your demo
 
 ---
 
-# Oppgave 5
+# Task 5
 
-## Musikk ♫ ♪
+## Music ♫ ♪
 
 ```html
 <audio id="music" loop>
@@ -722,26 +650,27 @@ function animate() {
 
 ---
 
-# Oppgave 5
+# Task 5
 
-## Legg opp og bruk deres egen musikk.
+## Add music
 
 http://poetene.net/threejs/effect/44-musikk-eksempel/
 
 ---
-# Oppgave 6
+# Task 6
 
 ## Shaders
 
 <img src=/res/img/shader_example.png alt="Shader example" style="width: 100%;" >
 
 ---
-# Hva er shaders?
+# What are shaders?
 
-Effekter som kan:
+Programs written in GLSL that are designed to operate on arrays (vertex) and render textures (fragment).
 
-- Legges oppå et bilde, f.ex greyscale, glitching (Fragment shaders).
-- Endre geometrien til objekter (Vertex shaders)
+THREE.js supplies their own shaders that contain the actual drawing, coloring, lighting, ++ logic
+
+Can also chained for post-processing fx
 
 ???
 
@@ -751,7 +680,7 @@ Vi skal ikke lære glsl i dag, men bruke en del ferdig skrevne shaders vi har la
 
 ---
 
-# Bruke shaders
+# Using post-processing shaders
 
 http://poetene.net/threejs/shaders/
 
@@ -769,9 +698,7 @@ Laster inn en av de ferdige shaderne våre
 ---
 # Uniforms
 
-Parametre som kan endre oppførselen til en shader
-
-Uniformen heter 'amount'; 'value' er verdien.
+Parameters that are sent to a shader
 
 ```javascript
 shaderPass.uniforms.amount.value = 1;
@@ -787,7 +714,7 @@ Shaderen bruker disse verdiene i beregningene sine
 
 # Shaders
 
-## Lek dere med shaders
+## Play with shaders
 
 http://poetene.net/threejs/effect/54-oppgave-6-shaders/
 
@@ -797,7 +724,7 @@ http://poetene.net/threejs/effect/54-oppgave-6-shaders/
 
 Lag noe kult, og vinn premie!
 
-Nå, la oss kode! Hilsen Poëtene
+Make some cool effects \p/
 ???
 
 Sjekk eksemplene på nettsiden, og sett sammen noe eget
