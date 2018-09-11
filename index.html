@@ -20,23 +20,19 @@
 
 class: center, middle
 
-# The THREE.js Musketeers
-<span class=subtle>by Poëtene</span>
+# THREE.js crash course
+<span class=subtle>by Ninjadev and Hackheim</span>
 
 
 ---
 
 # This course
-Short tasks that demonstrate basic THREE.js concepts.
+
+Short hands-on tasks that demonstrate basic THREE.js concepts.
 
 Then: combine what you have learned to make your own cool effect!
 
 Have some fun :)
-
-???
-Hver del skal de gjøre litt selv.
-
-De må gjerne finne på og tweake selv.
 
 ---
 
@@ -52,7 +48,7 @@ De må gjerne finne på og tweake selv.
 
 Javascript API for GPU rendering
 
-OpenGL in the browser
+"OpenGL in the browser"
 
 Works in modern browser (mobile and desktop)
 
@@ -66,7 +62,7 @@ Grafikken tegnes på et canvas-element (HTML5)
 
 Støttes av Firefox, Chrome, Safari, Opera, IE11
 
-Støttes også i iOS 8 og i nye Android-versjoner
+Støttes også i iOS og Android
 
 ---
 
@@ -76,7 +72,7 @@ Støttes også i iOS 8 og i nye Android-versjoner
 
 y goes upwards
 
-z goes outwards (from the screen)
+z goes outwards
 ]
 .float-right[
 ![Coordinate system in WebGL](res/img/3d_coordinate_system.png)
@@ -430,7 +426,7 @@ class: center, middle
 
 ## Date.now()
 
-Millisekunder siden 1. januar 1970
+Milliseconds since 1970-01-01
 
 ---
 class: middle
@@ -493,7 +489,7 @@ De fyller ut der det står kommentarer i koden på linken
 cube = new THREE.Mesh(geometry, material);
 ```
 
-cube.rotation has three properties: x, y og z
+cube.rotation has three properties: x, y and z
 
 ```javascript
 cube.rotation.x = 1;
@@ -534,7 +530,7 @@ Animate the camera in a circle around the z-axis
 
 # Task 2
 
-Set camera.position.x og .y
+Set camera.position.x and .y
 <div style=background:white;text-align:center;height:45%>
 <img style=height:70% src=res/img/unit_circle.svg>
 </div>
@@ -554,8 +550,9 @@ http://iver.io/threejs/effect/13-camera/
 Move the camera
 
 ```javascript
-camera.position.x = DISTANCE_FROM_Z_PLANE * Math.sin(t);
-camera.position.y = DISTANCE_FROM_Z_PLANE * Math.cos(t);
+const radius = 200;
+camera.position.x = radius * Math.sin(t);
+camera.position.y = radius * Math.cos(t);
 ```
 
 ---
@@ -564,14 +561,14 @@ camera.position.y = DISTANCE_FROM_Z_PLANE * Math.cos(t);
 
 ## Animate multiple cubes in fun trajectories
 
-You could go for instance a circular movement, a ∞ trajectory, or in a ☃ trajectory.
+For example, you could go for circular movement, a ∞ trajectory, or even a ☃ trajectory.
 
 ---
 
 # Task 3
 
-An array of cubes is available in ```cubes```.
-Can e.g. by animated by:
+An array of cubes is available in `cubes`.
+Can be animated in a for-loop like this:
 
 ```javascript
 for (var i = 0; i < cubes.length; i++) {
@@ -637,14 +634,14 @@ Add a skybox in your demo
 
 ```html
 <audio id="music" loop>
-    <source src="my_music.mp3" type="audio/mpeg">
+    <source src="url/to/my_music.mp3" type="audio/mpeg">
 </audio>
 ```
 ```javascript
 music.play();
 
 function animate() {
-	console.log(music.currentTime); // antall sekunder
+	console.log(music.currentTime); // in seconds
 }
 ```
 
@@ -664,13 +661,13 @@ http://iver.io/threejs/effect/44-musikk-eksempel/
 <img src=res/img/shader_example.png alt="Shader example" style="width: 100%;" >
 
 ---
-# What are shaders?
+# What is a shader?
 
-Programs written in GLSL that are designed to operate on arrays (vertex) and render textures (fragment).
+For now, just think of it as a function that is called per pixel.
 
-THREE.js supplies their own shaders that contain the actual drawing, coloring, lighting, ++ logic
+Written in GLSL, runs on the GPU.
 
-Can also chained for post-processing fx
+Can be chained for post-processing effects.
 
 ???
 
@@ -680,14 +677,14 @@ Vi skal ikke lære glsl i dag, men bruke en del ferdig skrevne shaders vi har la
 
 ---
 
-# Using post-processing shaders
+Using post-processing shaders
 
 http://iver.io/threejs/shaders/
 
 ```javascript
 var shaderPass = new THREE.ShaderPass(SHADERS.multiply);
 
-// Skriv kun dette for den siste shaderen
+// Only apply this to the last shader in the chain
 shaderPass.renderToScreen = true;
 
 composer.addPass(shaderPass);
@@ -722,9 +719,9 @@ http://iver.io/threejs/effect/54-oppgave-6-shaders/
 
 # Demo compo
 
-Lag noe kult, og vinn premie!
+Make some cool effects \o/
 
-Make some cool effects \p/
+http://iver.io/threejs/
 ???
 
 Sjekk eksemplene på nettsiden, og sett sammen noe eget
