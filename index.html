@@ -23,6 +23,13 @@ class: center, middle
 # THREE.js crash course
 <span class=subtle>by Ninjadev and Hackheim</span>
 
+---
+
+<img src="res/img/DSC_0303.JPG" style="width:100%">
+
+---
+
+<img src="res/img/DSC_0304.JPG" style="width:100%">
 
 ---
 
@@ -33,14 +40,6 @@ Short hands-on tasks that demonstrate basic THREE.js concepts.
 Then: combine what you have learned to make your own cool effect!
 
 Have some fun :)
-
----
-
-<img src="res/img/DSC_0303.JPG" style="width:100%">
-
----
-
-<img src="res/img/DSC_0304.JPG" style="width:100%">
 
 ---
 
@@ -432,12 +431,12 @@ Milliseconds since 1970-01-01
 class: middle
 
 ```javascript
-var initial_t = Date.now() / 1000;
+var initialT = Date.now() / 1000;
 
 function animate() {
     requestAnimationFrame(animate);
 
-    var t = Date.now() / 1000 - initial_t;
+    var t = Date.now() / 1000 - initialT;
 
     // do animation here
 
@@ -453,7 +452,7 @@ Nå har vi en variabel som øker for hver frame i animasjonen.
 
 Uansett hvor ofte skjermen oppdateres øker den med én hvert sekund.
 
-Initial_t gjør at den starter på 0.
+initialT gjør at den starter på 0.
 
 ---
 class: center middle
@@ -511,7 +510,7 @@ cube.rotation.x = 1;
 function animate() {
     requestAnimationFrame(animate);
 
-    var t = Date.now() / 1000 - initial_t;
+    var t = Date.now() / 1000 - initialT;
 
     cube.rotation.x = t * 5;
     cube.rotation.z = t * 5;
